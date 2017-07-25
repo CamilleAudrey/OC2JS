@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:OC222JS/OC222JS.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:OC2JS/OC2JS.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:JSCallOC/JSCallOC.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:MySDK/MySDK.xcodeproj">
+   </FileRef>
+</Workspace>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>测试IOS与JS之前的互调</title>
+	<style type="text/css">
+	  * {
+	  	font-size: 40px;
+	  }
+	</style>
+  <script type="text/javascript">
+
+  var jsFunc = function() {
+    alert('Objective-C call js to show alert');
+  }
+  
+  var jsParamFunc = function(argument) {
+    document.getElementById('jsParamFuncSpan').innerHTML
+    = argument['name'];
+  }
+  
+  var jsFuncWithOCParam = function(name1, name2){
+      alert('title is ' + name1 + ' msg is ' + name2);
+  }
+  
+  </script>
+  
+</head>
+
+<body>
+  
+<div style="margin-top: 100px">
+	<h1>Test how to use objective-c call js</h1>
+	<input type="button" value="Call ObjC system camera" onclick="OCModel.callSystemCamera()">
+	<input type="button" value="Call ObjC system alert" onclick="OCModel.showAlertMsg('js title', 'js message')">
+</div>
+
+<div>
+	<input type="button" value="Call ObjC func with JSON " onclick="OCModel.callWithDict({'name': 'testname', 'age': 10, 'height': 170})">
+	<input type="button" value="Call ObjC func with JSON and ObjC call js func to pass args." onclick="OCModel.jsCallObjcAndObjcCallJsWithDict({'name': 'testname', 'age': 10, 'height': 170})">
+        
+        <!--自己写的 传入2个参数-->
+        <input type="button" value="JS调用OC的方法，且该方法有2个不同的实参" onclick="OCModel.JSCallOCWithTitleNumber('lili', 10)">
+        <!--自己写的 传入2个参数-->
+        <input type="button" value="OC调用JS的方法，且对JS方法传入2个不同的实参" onclick="OCModel.OCCallJS()">
+</div>
+<div>
+    <!--点击这行文字 出现的alert是 Test1网页上的 方法-->
+  <a href="test1.html">Click to next page</a>
+</div>
+
+<div>
+	<span id="jsParamFuncSpan" style="color: red; font-size: 50px;"></span>
+</div>
+
+
+</body>
+</html>

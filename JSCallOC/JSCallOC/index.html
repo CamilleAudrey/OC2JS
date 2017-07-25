@@ -1,0 +1,29 @@
+<html>
+
+	<meta charset="utf-8">
+	<title>JS调用OC的打电话的方法</title>
+	<script>
+		function call(number){
+			//location.href='hq://call:?10086',用冒号的话会被系统忽略
+			location.href='hq://call_number2_number3_?10086&10000&12315';
+		}
+    
+        function postStr(str1,str2){
+            document.getElementById("text1").value=str1;
+            document.getElementById("text2").value=str2;
+            return document.getElementById("text3").value;
+        }
+    
+	</script>
+        
+        
+        
+                    
+	<body>
+		<button onclick='call(10086)'>打电话</button>
+        <p><input type="text" id="text1" value="实参1"></p>
+        <p><input type="text" id="text2" value="实参2"></p>
+        <p><input type="text" id="text3" value="两个参数得到一个返回值"></p>
+                    
+	</body>
+</html>
